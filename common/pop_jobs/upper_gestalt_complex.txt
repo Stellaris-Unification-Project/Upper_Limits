@@ -10,9 +10,10 @@ food_growth_factory_drone = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_food_growth_factory_drone
@@ -49,9 +50,10 @@ nanite_builder_drone = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_nanite_builder_drone
@@ -91,9 +93,10 @@ gigamind_drone = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	planet_modifier = {
 		planet_researchers_physics_research_produces_mult = 0.1
@@ -132,9 +135,10 @@ computing_drone = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 
 	planet_modifier = {
 		planet_researchers_physics_research_produces_mult = 0.1
@@ -172,9 +176,10 @@ metal_vitalization_drone = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_metal_vitalizer_drone
@@ -212,9 +217,10 @@ space_powderization_drone = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_powderization_drone
@@ -252,9 +258,10 @@ gravity_condensation_drone = {
 		is_being_assimilated = no
 	}
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_gravity_condenser_drone
@@ -292,9 +299,10 @@ bio_builder_drone = {
 		is_being_assimilated = no
 	}
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_bio_builder_drone
@@ -331,9 +339,10 @@ bio_merger_drone = {
 		is_being_assimilated = no
 	}
 	
+	possible_precalc = can_fill_drone_job
+	
 	possible = {
-		drone_job_check_trigger = yes
-	}
+		}
 	
 	resources = {
 		category = planet_bio_merger_drone

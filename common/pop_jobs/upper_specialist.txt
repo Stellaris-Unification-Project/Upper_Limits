@@ -257,9 +257,10 @@ bio_engineer = {
 		is_being_assimilated = no
 	}
 
+	possible_precalc = can_fill_specialist_job
+
 	possible = {
-		specialist_job_check_trigger = yes
-	}
+		}
 
 	resources = {
 		category = planet_bio_engineer

@@ -33,8 +33,10 @@ building_nanite_factory = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = resort_colony }	
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		allow = {
@@ -272,8 +274,10 @@ building_nanite_hub = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = penal_colony }
-			NOT = { has_modifier = resort_colony }	
+			NOR = {
+				has_modifier = penal_colony
+				has_modifier = resort_colony
+			}	
 			NOT = { has_modifier = slave_colony }
 		}
 
@@ -377,8 +381,10 @@ building_metal_vitalization_labs = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = resort_colony }	
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		allow = {
@@ -576,8 +582,10 @@ building_living_metal_exploition_facilities = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = penal_colony }	
-			NOT = { has_modifier = resort_colony }	
+			NOR = {
+				has_modifier = penal_colony
+				has_modifier = resort_colony
+			}	
 			NOT = { has_modifier = slave_colony }
 		}
 
@@ -683,8 +691,10 @@ building_space_powderization_labs = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = resort_colony }	
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		allow = {
@@ -881,8 +891,10 @@ building_oxygen_gradientation_facilities = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = penal_colony }	
-			NOT = { has_modifier = resort_colony }	
+			NOR = {
+				has_modifier = penal_colony
+				has_modifier = resort_colony
+			}	
 			NOT = { has_modifier = slave_colony }
 			owner = {	is_machine_empire = no }
 		}
@@ -978,8 +990,10 @@ building_gravity_condensation_labs = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = resort_colony }	
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		allow = {
@@ -1176,8 +1190,10 @@ building_gravity_violation_facilities = {
 		category = manufacturing
 		
 		potential = {
-			NOT = { has_modifier = penal_colony }	
-			NOT = { has_modifier = resort_colony }	
+			NOR = {
+				has_modifier = penal_colony
+				has_modifier = resort_colony
+			}	
 			NOT = { has_modifier = slave_colony }
 		}
 		

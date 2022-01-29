@@ -1337,8 +1337,10 @@ building_bio_structorizer = {
 	}
 
 	potential = {
-		NOT = { has_modifier = resort_colony }
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
 		OR = {
 			building_relaxed_basic_income_check = yes
 			AND = {

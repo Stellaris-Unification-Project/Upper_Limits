@@ -9,8 +9,10 @@ building_simple_testing_grounds = {
 		
 		#Correct
 		potential = {
-			NOT = { has_modifier = resort_colony }
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		#Correct

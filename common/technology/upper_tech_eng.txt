@@ -20,17 +20,11 @@ tech_improved_forging_techniques = {
 		factor = 0.5
 		modifier = {
 			factor = 0.2
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 4
@@ -50,10 +44,7 @@ tech_improved_forging_techniques = {
 		weight = 20
 		modifier = {
 			factor = 5
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 4
@@ -107,17 +98,11 @@ tech_improved_production_techniques = {
 		factor = 0.5
 		modifier = {
 			factor = 0.2
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 4
@@ -137,10 +122,7 @@ tech_improved_production_techniques = {
 		weight = 20
 		modifier = {
 			factor = 5
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 4
@@ -219,17 +201,11 @@ tech_nanite_marvels = {
 		factor = 1.25
 		modifier = {
 			factor = 0.5
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -244,17 +220,11 @@ tech_nanite_marvels = {
 		factor = 2 #good component
 		modifier = {
 			factor = 0.5
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 		}
 		modifier = {
 			factor = 2
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		modifier = {
 			factor = 1.25

@@ -10,8 +10,10 @@ building_super_computers_station = {
 		
 		#Correct
 		potential = {
-			NOT = { has_modifier = resort_colony }
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		#Correct
@@ -434,8 +436,10 @@ building_hyper_computers_station = {
 		
 		#Correct
 		potential = {
-			NOT = { has_modifier = resort_colony }
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		#Correct
@@ -876,8 +880,10 @@ building_quantum_computers_station = {
 		category = research
 		
 		potential = {
-			NOT = { has_modifier = resort_colony }
-			NOT = { has_modifier = slave_colony }
+			NOR = {
+				has_modifier = resort_colony
+				has_modifier = slave_colony
+			}
 		}
 
 		#Correct

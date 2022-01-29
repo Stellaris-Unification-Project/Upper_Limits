@@ -7,8 +7,10 @@ building_teleporter = {
 	category = army
 
 	potential = {
-		NOT = { has_modifier = penal_colony }	
-		NOT = { has_modifier = slave_colony }
+		NOR = {
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+		}
 	}
 
 	allow = {
