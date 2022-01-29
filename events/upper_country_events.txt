@@ -1,0 +1,58 @@
+namespace = countryupper
+
+#Teleporter Number Variable
+country_event = {
+	id = countryupper.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			any_owned_planet = {
+				has_active_building = building_teleporter
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			which = planet_teleporters
+			value = 0
+		}
+		every_owned_planet = {
+			limit = { has_active_building = building_teleporter }
+			prev = {
+				change_variable = {
+					which = planet_teleporters
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = countryupper.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		owner = {
+			every_owned_planet = {
+				if = {
+					limit = { NOT = { has_active_building = building_solar_system_mission_center } }
+					set_variable = {
+						which = building_solar_system_mission_center
+						value = 0
+					}
+				}
+				else_if = {
+					limit = { has_active_building = building_solar_system_mission_center }
+					planet_event = {
+						id = planetupper.1
+					}
+				}
+			}
+		}
+	}
+}

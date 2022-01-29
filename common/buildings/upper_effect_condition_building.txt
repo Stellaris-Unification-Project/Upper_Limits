@@ -1,0 +1,2176 @@
+building_teleporter = {
+
+	base_buildtime = @building_build_time3
+	base_cap_amount = 1
+	can_demolish = yes
+
+	category = army
+
+	potential = {
+		NOT = { has_modifier = penal_colony }	
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	prerequisites = {
+		"tech_portal_building"
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_ai = yes
+			OR = {
+				has_monthly_income = {
+					resource = rare_crystals
+					value < 0
+				}
+				has_monthly_income = {
+					resource = energy
+					value < 0
+				}
+				NOR = {
+					has_country_flag = freed_rare_crystals
+					has_country_flag = freed_energy
+				}
+			}
+		}
+	}
+
+	on_built = {
+		owner = {
+			country_event = {
+				id = countryupper.1
+			}
+		}
+	}
+
+	on_destroy = {
+		owner = {
+			set_timed_country_flag = {
+				flag = freed_rare_crystals
+				days = 120
+			}
+			set_timed_country_flag = {
+				flag = freed_energy
+				days = 60
+			}
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 1
+				}
+				is_gestalt = no
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 2
+				}
+				is_gestalt = no
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 3
+				}
+				is_gestalt = no
+			}
+		}
+		pop_resettlement_cost_mult = -0.1
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 4
+				}
+				is_gestalt = no
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 5
+				}
+				is_gestalt = no
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 6
+				}
+				is_gestalt = no
+			}
+		}
+		pop_resettlement_cost_mult = -0.1
+		job_soldier_add = 1
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 1
+				}
+				is_gestalt = yes
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 2
+				}
+				is_gestalt = yes
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 3
+				}
+				is_gestalt = yes
+			}
+		}
+		pop_resettlement_cost_mult = -0.1
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 4
+				}
+				is_gestalt = yes
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 5
+				}
+				is_gestalt = yes
+			}
+		}
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value > 6
+				}
+				is_gestalt = yes
+			}
+		}
+		pop_resettlement_cost_mult = -0.1
+		job_warrior_drone_add = 1
+		planet_emigration_push_mult = 0.1
+		planet_immigration_pull_mult = 0.1
+	}	
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @building_build_cost5
+		}
+		upkeep = {
+			energy = @building_build_upkeep8
+		}
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		text = buildings_effect_properties
+	}
+
+	triggered_desc = {
+		text = buildings_effect_condition_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		text = teleporter_effect
+	}
+
+	triggered_desc = {
+		trigger = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = teleporter_effect_is_gestalt
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_warrior_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = 1000
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value >= 16
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value >= 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value >= 3
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value >= 5
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			owner = {
+				check_variable = {
+					which = planet_teleporters
+					value >= 7
+				}
+			}
+		}
+	}
+}
+
+####
+#Public Forge!####
+####
+
+building_public_forge = {
+
+	base_buildtime = @building_build_time3	
+	can_demolish = yes
+	base_cap_amount = 1
+
+	category = manufacturing
+
+	potential = {
+		#Potential Not if Any of this is true
+		exists = owner
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony
+		}
+	}
+
+	allow = {
+		OR = {
+			has_district = district_mining
+			has_district = district_mining_uncapped
+		}
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = yes
+			}
+		}
+	}
+
+	on_destroy = {
+		owner = {
+			set_timed_country_flag = {
+				flag = freed_building_public_forge
+				days = 180
+			}
+		}
+	}
+
+	#Hive Mind
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 2
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 4
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 6
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 8
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 10
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 12
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 14
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 16
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 18
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 20
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+		}
+	}
+
+	#Machine Empire
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 2
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 4
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 6
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 8
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 10
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 12
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 14
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 16
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 18
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 20
+			}
+		}
+		modifier = {
+			job_fabricator_add = 1
+		}
+	}
+
+	#Regular
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 2
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 4
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 6
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 8
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 10
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 12
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 14 
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 16
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			OR = {
+				num_districts = {
+					type = district_mining
+					value >= 18
+				}
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_mining
+				value >= 20
+			}
+		}
+		modifier = {
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		text = buildings_effect_properties
+	}
+
+	triggered_desc = {
+		text = buildings_effect_condition_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = public_forge_effect_desc
+		
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = public_forge_hive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = public_forge_machine_effect_desc
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_alloy_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			volatile_motes = @building_build_srcost2
+			minerals = @building_build_cost4
+		}
+		upkeep = {
+			volatile_motes = @building_build_srupkeep2
+			energy = @building_build_upkeep4
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 2
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 4
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 6
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 8
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 10
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 12
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 14
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 16
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 18
+				}
+			}
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_mining
+					value >= 20
+				}
+			}
+			minerals = 1
+		}
+	}
+
+	#Too complex for AI to use well
+	ai_weight = {
+		weight = 0
+	}
+
+	#Will use an added tech
+	prerequisites = {
+		"tech_improved_forging_techniques"
+	}
+}
+
+####
+#Power Devider!####
+####
+
+building_power_devider = {
+
+	base_buildtime = @building_build_time3	
+	can_demolish = yes
+	base_cap_amount = 1
+
+	category = manufacturing
+
+	potential = {
+		#Potential Not if Any of this is true
+		exists = owner
+		owner = {
+			OR = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony
+		}
+	}
+
+	allow = {
+		OR = {
+			has_district = district_generator
+			has_district = district_generator_uncapped
+		}
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = yes
+			}
+		}
+	}
+
+	on_destroy = {
+		owner = {
+			set_timed_country_flag = {
+				flag = freed_building_power_devider
+				days = 180
+			}
+		}
+	}
+
+	#Gestalt
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			num_districts = {
+				type = district_generator
+				value >= 2
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 4
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 6
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 8
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 10
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 12
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 14
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 16
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 18
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 20
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 1
+		}
+	}
+
+	#Regular
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 2
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 4
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 6
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 8
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 10
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 12
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 14
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 16
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 18
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_generator
+				value >= 20
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+		}
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		text = buildings_effect_properties
+	}
+
+	triggered_desc = {
+		text = buildings_effect_condition_desc
+	}
+
+	#Words
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = power_devider_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = power_devider_gestalt_effect_desc
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_artisan_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_artisan_drone_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			rare_crystals = @building_build_srcost2
+			minerals = @building_build_cost4
+		}
+		upkeep = {
+			rare_crystals = @building_build_srupkeep2
+			energy = @building_build_upkeep4
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 2
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 4
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 6
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 8
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 10
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 12
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 14
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 16
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 18
+				}
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_generator
+					value >= 20
+				}
+			}
+			energy = 1
+		}
+	}
+
+	#Too complex for AI to use well
+	ai_weight = {
+		weight = 0
+	}
+
+	#Will use an added tech
+	prerequisites = {
+		"tech_improved_production_techniques"
+	}
+}
+
+####
+#Protected Lands!####
+####
+
+building_protected_lands = {
+
+	base_buildtime = @building_build_time3	
+	can_demolish = yes
+	base_cap_amount = 1
+
+	category = manufacturing
+
+	potential = {
+		#Potential Not if Any of this is true
+		exists = owner
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony
+		}
+	}
+
+	allow = {
+		OR = {
+			has_district = district_farming 
+			has_district = district_farming_uncapped
+		}
+		NOR = { 
+			has_modifier = resort_colony 
+			has_modifier = slave_colony 
+			has_modifier = penal_colony
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				is_ai = yes
+			}
+		}
+	}
+
+	on_destroy = {
+		owner = {
+			set_timed_country_flag = {
+				flag = freed_building_protected_lands
+				days = 180
+			}
+		}
+	}
+
+	#Hive Mind
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 2
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 4
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 6
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 8
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 10
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 12
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 14
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 16
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 18
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 20
+			}
+		}
+		modifier = {
+			job_brain_drone_add = 1
+		}
+	}
+
+	#Machine Empire
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 2
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 4
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 6
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 8
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 10
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 12
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 14
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 16
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 18
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			num_districts = {
+				type = district_farming
+				value >= 20
+			}
+		}
+		modifier = {
+			job_calculator_add = 1
+		}
+	}
+
+	#Regular
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 2
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 4
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 6
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 8
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 10
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 12
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 14
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 16
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 18
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			num_districts = {
+				type = district_farming 
+				value >= 20
+			}
+		}
+		modifier = {
+			job_researcher_add = 1
+		}
+	}
+
+	#Words
+
+	triggered_desc = {
+		text = dash_14
+	}
+
+	triggered_desc = {
+		text = buildings_effect_properties
+	}
+
+	triggered_desc = {
+		text = buildings_effect_condition_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = protected_lands_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = protected_lands_hive_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = protected_lands_machine_effect_desc
+	}
+
+	triggered_desc = {
+		text = dash_14
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_brain_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_calculator_effect_desc
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			exotic_gases = @building_build_srcost2
+			minerals = @building_build_cost4
+		}
+		upkeep = {
+			exotic_gases = @building_build_srupkeep2
+			energy = @building_build_upkeep4
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 2
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 4
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 6
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 8
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 10
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 12
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 14
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 16
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 18
+				}
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				num_districts = {
+					type = district_farming
+					value >= 20
+				}
+			}
+			food = 1
+		}
+	}
+
+	#Too complex for AI to use well
+	ai_weight = {
+		weight = 0
+	}
+
+	#Will use an added tech
+	prerequisites = {
+		"tech_hydroponics"
+	}
+}
