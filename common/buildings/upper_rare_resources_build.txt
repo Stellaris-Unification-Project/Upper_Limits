@@ -277,8 +277,8 @@ building_nanite_hub = {
 			NOR = {
 				has_modifier = penal_colony
 				has_modifier = resort_colony
-			}	
-			NOT = { has_modifier = slave_colony }
+				has_modifier = slave_colony
+			}
 		}
 
 		allow = {
@@ -585,8 +585,8 @@ building_living_metal_exploition_facilities = {
 			NOR = {
 				has_modifier = penal_colony
 				has_modifier = resort_colony
-			}	
-			NOT = { has_modifier = slave_colony }
+				has_modifier = slave_colony
+			}
 		}
 
 		allow = {
@@ -894,8 +894,8 @@ building_oxygen_gradientation_facilities = {
 			NOR = {
 				has_modifier = penal_colony
 				has_modifier = resort_colony
-			}	
-			NOT = { has_modifier = slave_colony }
+				has_modifier = slave_colony
+			}
 			owner = {	is_machine_empire = no }
 		}
 
@@ -1193,8 +1193,8 @@ building_gravity_violation_facilities = {
 			NOR = {
 				has_modifier = penal_colony
 				has_modifier = resort_colony
-			}	
-			NOT = { has_modifier = slave_colony }
+				has_modifier = slave_colony
+			}
 		}
 		
 		allow = {

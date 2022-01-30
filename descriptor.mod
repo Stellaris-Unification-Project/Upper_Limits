@@ -23,5 +23,5 @@ tags={
 	"Loading Screen"
 }
 name="Upper Limits V3.0+"
-supported_version="3.*"
+supported_version="3.2.2"
 remote_file_id="2472118845"
